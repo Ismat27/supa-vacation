@@ -15,15 +15,14 @@ const Card = ({
   onClickFavorite = () => null,
 }) => (
   <Link href={`/homes/${id}`}>
-    <a className="block w-full">
+    <span className="block w-full">
       <div className="relative">
         <div className="bg-gray-200 rounded-lg shadow overflow-hidden aspect-w-16 aspect-h-9">
           {image ? (
             <Image
               src={image}
               alt={title}
-              layout="fill"
-              objectFit="cover"
+              fill
               className="hover:opacity-80 transition"
             />
           ) : null}
@@ -68,7 +67,7 @@ const Card = ({
         }).format(price ?? 0)}{' '}
         <span className="text-gray-500">/night</span>
       </p>
-    </a>
+    </span>
   </Link>
 );
 

@@ -66,18 +66,18 @@ const Layout = ({ children = null }) => {
           <div className="h-full container mx-auto">
             <div className="h-full px-4 flex justify-between items-center space-x-4">
               <Link href="/">
-                <a className="flex items-center space-x-1">
+                <span className="flex items-center space-x-1">
                   <SparklesIcon className="shrink-0 w-8 h-8 text-rose-500" />
                   <span className="text-xl font-semibold tracking-wide">
                     Supa<span className="text-rose-600">Vacation</span>
                   </span>
-                </a>
+                </span>
               </Link>
               <div className="flex items-center space-x-4">
                 <Link href="/create">
-                  <a className="hidden sm:block hover:bg-gray-200 transition px-3 py-1 rounded-md">
+                  <span className="hidden sm:block hover:bg-gray-200 transition px-3 py-1 rounded-md">
                     List your home
-                  </a>
+                  </span>
                 </Link>
                 {isLoadingUser ? (
                   <div className="h-8 w-[75px] bg-gray-200 animate-pulse rounded-md" />
