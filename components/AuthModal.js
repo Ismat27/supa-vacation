@@ -150,12 +150,12 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                 <div className="px-4 sm:px-12">
                   <div className="flex justify-center">
                     <Link href="/">
-                      <a className="flex items-center space-x-1">
+                      <span className="flex items-center space-x-1">
                         <SparklesIcon className="shrink-0 w-8 h-8 text-rose-500" />
                         <span className="text-xl font-semibold tracking-wide">
                           Supa<span className="text-rose-500">Vacation</span>
                         </span>
-                      </a>
+                      </span>
                     </Link>
                   </div>
 

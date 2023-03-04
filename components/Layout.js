@@ -89,7 +89,7 @@ const Layout = ({ children = null }) => {
                           <Image
                             src={user?.image}
                             alt={user?.name || 'Avatar'}
-                            layout="fill"
+                            fill
                           />
                         ) : (
                           <UserIcon className="text-gray-400 w-6 h-6" />
@@ -113,7 +113,7 @@ const Layout = ({ children = null }) => {
                               <Image
                                 src={user?.image}
                                 alt={user?.name || 'Avatar'}
-                                layout="fill"
+                                fill
                               />
                             ) : (
                               <UserIcon className="text-gray-400 w-6 h-6" />
@@ -137,10 +137,10 @@ const Layout = ({ children = null }) => {
                                 <Menu.Item>
                                   {href ? (
                                     <Link href={href}>
-                                      <a className="flex items-center space-x-2 py-2 px-4 rounded-md hover:bg-gray-100">
+                                      <span className="flex items-center space-x-2 py-2 px-4 rounded-md hover:bg-gray-100">
                                         <Icon className="w-5 h-5 shrink-0 text-gray-500" />
                                         <span>{label}</span>
-                                      </a>
+                                      </span>
                                     </Link>
                                   ) : (
                                     <button
