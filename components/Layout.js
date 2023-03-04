@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useRouter } from 'next/router';
+import { useSession, signOut } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -35,17 +36,18 @@ const menuItems = [
   {
     label: 'Logout',
     icon: LogoutIcon,
-    onClick: () => null,
+    onClick: signOut,
   },
 ];
 
 const Layout = ({ children = null }) => {
+  const { data: session, status } = useSession();
+  const user = session?.user;
+  const isLoadingUser = status === 'loading';
+
   const router = useRouter();
 
   const [showModal, setShowModal] = useState(false);
-
-  const user = null;
-  const isLoadingUser = false;
 
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
