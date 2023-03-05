@@ -1,10 +1,8 @@
 import Layout from "@/components/Layout"
 import ListingForm from "@/components/ListingForm"
-import { PrismaClient } from "@prisma/client"
 import { getSession } from "next-auth/react"
 import axios from "axios"
-
-const prisma = new PrismaClient()
+import { prisma } from "@/lib/prisma"
 
 export const getServerSideProps = async (context) => {
     const redirect = {

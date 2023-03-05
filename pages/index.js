@@ -1,8 +1,6 @@
 import Layout from '@/components/Layout';
 import Grid from '@/components/Grid';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient()
+import { prisma } from '@/lib/prisma';
 
 export async function getServerSideProps () {
   const homes = await prisma.home.findMany()
@@ -10,8 +8,6 @@ export async function getServerSideProps () {
     props: {homes: JSON.parse(JSON.stringify(homes))}
   }
 }
-
-import homes from 'data.json';
 
 export default function Home({homes}) {
   return (

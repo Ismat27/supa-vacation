@@ -1,5 +1,4 @@
-// pages/homes/[id].js
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 import { useEffect, useState } from 'react';
@@ -7,7 +6,6 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
-const prisma = new PrismaClient()
 
 export async function getStaticPaths () {
     const homes = await prisma.home.findMany({
