@@ -1,11 +1,6 @@
 import { getSession } from "next-auth/react"
-import { createClient } from "@supabase/supabase-js"
+import { supabase } from "@/lib/supabase";
 import { prisma } from "@/lib/prisma";
-
-const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_KEY
-);
 
 const handler =  async (req, res) => {
     const session = await getSession({req})
